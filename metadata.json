@@ -1,0 +1,5 @@
+{
+  "name": "ChemLab AI",
+  "description": "An interactive digital chemistry lab where you can combine virtual chemicals by uploading images of two different items. The app generates a photorealistic image of the reaction, complete with a detailed explanation of the resulting compound.",
+  "requestFramePermissions": []
+}
