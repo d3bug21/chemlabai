@@ -10,7 +10,7 @@ import type { ReactionResult } from './types';
 const App: React.FC = () => {
   const [reactant1, setReactant1] = useState<File | null>(null);
   const [reactant2, setReactant2] = useState<File | null>(null);
-  const [prompt, setPrompt] = useState<string>("Show me what happens when these two objects with different elements react.");
+  const [prompt, setPrompt] = useState<string>("Combine these to create a new material and explain the chemical reaction.");
   const [result, setResult] = useState<ReactionResult | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

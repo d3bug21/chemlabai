@@ -30,10 +30,28 @@ export const generateReaction = async (
     reactant2: File,
     prompt: string
 ): Promise<ReactionResult> => {
+
+    const fullPrompt = `As a creative chemist and AI, your task is to visualize and explain a fictional chemical reaction between the two provided images.
+
+User's request: "${prompt}"
+
+Based on the user's request and the images, generate two things:
+1. A photorealistic image of the resulting product or reaction.
+2. A detailed, educational explanation of the reaction formatted exactly like this (use markdown for bolding and lists):
+
+**Reaction Name:** [Come up with a creative name for the reaction or product]
+**Chemical Equation:** [A plausible-looking, fictional chemical equation for this reaction. e.g., 2Ab + C -> Ab2C]
+**Description:** [Explain what is happening during the reaction, step-by-step, in an engaging way.]
+**Properties:** 
+- [List a key property]
+- [List another key property]
+- [List a third key property]
+**Fun Fact:** [Provide an interesting, made-up fact or potential real-world application for this new substance.]
+`;
     
     const reactant1Part = await fileToGenerativePart(reactant1);
     const reactant2Part = await fileToGenerativePart(reactant2);
-    const textPart = { text: prompt };
+    const textPart = { text: fullPrompt };
 
     const model = 'gemini-2.5-flash-image-preview';
 
